@@ -250,7 +250,7 @@ end
 
 %%
 destinationOfMass(1) = 0;
-for m = 1:6233
+for m = 1:size(timeVector-1)
     destinationOfMass(1+m) = destinationOfMass(m) + 0.50*((velocity(m)+velocity(m+1))*(timeVector(m+1)-timeVector(m)));
 end
 destinationOfMass(6235) = destinationOfMass(6234); 
@@ -265,9 +265,9 @@ destinationOfMass(6235) = destinationOfMass(6234);
  plot(timeVector,destinationOfMass);
  grid on;
  set(gca,'FontSize',12);
- title('Acceleration of the mass over time');
+ title('Destination of the mass over time');
  xlabel('time (secs)');
- ylabel('Acceleration (m/secs)');
+ ylabel('Destination (m)');
 %
  subplot(3,1,2);
  plot(timeVector, velocity)
