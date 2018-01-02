@@ -4,7 +4,7 @@
 %% NAME: _Nail Tosun
 %% STUDENT NUMBER: 2094563
 
-function []=template_hw4()
+function []=mesh1()
 
 %%
 % change your .m file name and the function name above, to the following:
@@ -248,17 +248,11 @@ for j = 3538:-1:2500
     A(-j+4579+2078*2) = 0.5*(massAcceleration(j)+massAcceleration(j+1));
 end   
 
-%%
+
 destinationOfMass(1) = 0;
-for m = 1:size(timeVector-1)
+for m = 1:6234
     destinationOfMass(1+m) = destinationOfMass(m) + 0.50*((velocity(m)+velocity(m+1))*(timeVector(m+1)-timeVector(m)));
 end
-destinationOfMass(6235) = destinationOfMass(6234); 
-
-%%
-% part e-ii
-
-% insert your code here (plot)
 
  figure;
  subplot(3,1,1);
@@ -268,7 +262,8 @@ destinationOfMass(6235) = destinationOfMass(6234);
  title('Destination of the mass over time');
  xlabel('time (secs)');
  ylabel('Destination (m)');
-%
+
+
  subplot(3,1,2);
  plot(timeVector, velocity)
  grid on;
